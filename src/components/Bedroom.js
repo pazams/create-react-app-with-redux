@@ -1,13 +1,25 @@
-import React, {PropTypes} from 'react';
+import React, {PureComponent, PropTypes} from 'react';
 
-const Bedroom = (props) => {
+class Bedroom  extends PureComponent {
+
+  componentWillReceiveProps(nextProps) {
+     const currentLight = this.props.light;
+     const nextLight = nextProps.light;
+
+     if(currentLight==='OFF' && nextLight==='DIM') {
+         this.props.onWakingUp();
+     }
+
+  }
+
+  render() {
 
     const { 
       light, 
       onLightOn, 
       onLightOff, 
       onLightDim, 
-    } = props;
+    } = this.props;
 
     const style = {
       backgroundColor: mapLightToColor(light),
@@ -24,6 +36,8 @@ const Bedroom = (props) => {
       </div>
 
     );
+
+  }
 
 }
 

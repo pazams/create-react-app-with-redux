@@ -1,8 +1,8 @@
-import people from './people-reducer.js';
+import bedroom from './bedroom.js';
 import {combineReducers} from 'redux';
 
 const rootReducer = combineReducers({
-  people
+  bedroom
 });
 
 export default rootReducer;

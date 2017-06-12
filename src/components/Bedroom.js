@@ -10,21 +10,19 @@ const Bedroom = (props) => {
     } = props;
 
     const style = {
-      height: '150px',
-      padding: '5px',
       backgroundColor: mapLightToColor(light),
     }
 
     return (
 
-      <div style={style} >
+      <div className='room' style={style} >
         <h2 className='white'>Bedroom</h2>
         <span className='white'>Light switch: </span>
         <button onClick={onLightOn}> turn on </button>
         <button onClick={onLightDim}> dim </button>
         <button onClick={onLightOff}> turn off </button>
-
       </div>
+
     );
 
 }
@@ -37,6 +35,8 @@ function mapLightToColor(light){
       return 'black';
     case 'DIM':
       return 'orange';
+    default:
+      return 'black';
   }
 }
 

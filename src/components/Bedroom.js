@@ -2,16 +2,6 @@ import React, {PureComponent, PropTypes} from 'react';
 
 class Bedroom  extends PureComponent {
 
-  componentWillReceiveProps(nextProps) {
-     const currentLight = this.props.light;
-     const nextLight = nextProps.light;
-
-     if(currentLight==='OFF' && nextLight==='DIM') {
-         this.props.onWakingUp();
-     }
-
-  }
-
   render() {
 
     const { 

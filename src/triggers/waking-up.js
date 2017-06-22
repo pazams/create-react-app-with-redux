@@ -1,7 +1,7 @@
 import * as kitchenActions from '../actions/kitchen';
 
 export default (dispatch, previousState, currentState) => {
-  if(!previousState || !previousState) return;
+  if(!previousState) return;
 
   const previousLight = previousState.bedroom.light;
   const currentLight = currentState.bedroom.light;

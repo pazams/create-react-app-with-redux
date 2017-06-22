@@ -1,9 +1,6 @@
-import store from '../store/store';
-import repuke from '../store/repuke';
 import * as kitchenActions from '../actions/kitchen';
-const dispatch = store.dispatch;
 
-repuke((previousState, currentState) => {
+export default (dispatch, previousState, currentState) => {
   if(!previousState || !previousState) return;
 
   const previousLight = previousState.bedroom.light;
@@ -13,4 +10,4 @@ repuke((previousState, currentState) => {
     dispatch(kitchenActions.onKettleFill());
     dispatch(kitchenActions.onKettleHeat());
   }
-});
+};
